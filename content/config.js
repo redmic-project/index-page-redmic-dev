@@ -79,4 +79,4 @@ var config = {
 		"title": "Grafana",
 		"description": "Representación gráfica de métricas"
 	}]
-}
+};
