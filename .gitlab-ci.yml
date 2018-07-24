@@ -9,6 +9,8 @@ docker-build-development:
   stage: package
   variables:
     DOCKER_DRIVER: overlay2
+    PARENT_IMAGE_NAME: registry.gitlab.com/redmic-project/docker/index-pages
+    PARENT_IMAGE_TAG: dev-latest
   services:
     - docker:dind
   only:
@@ -24,10 +26,11 @@ docker-build-stable:
   stage: package
   variables:
     DOCKER_DRIVER: overlay2
+    PARENT_IMAGE_NAME: registry.gitlab.com/redmic-project/docker/index-pages
+    PARENT_IMAGE_TAG: latest
   services:
     - docker:dind
   only:
-    - branches
     - master
   script:
     - docker login -u gitlab-ci-token -p ${CI_JOB_TOKEN} ${CI_REGISTRY}
@@ -104,5 +107,4 @@ deploy-stable:
     name: pro
     url: https://${DEV_PUBLIC_HOSTNAME}
   only:
-    - branches
     - master
