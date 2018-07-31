@@ -78,5 +78,10 @@ var config = {
 		"img": "grafana.png",
 		"title": "Grafana",
 		"description": "Representación gráfica de métricas"
+	},{
+		"subdomain": "geoserver",
+		"img": "geoserver.png",
+		"title": "GeoServer",
+		"description": "Servidor de datos GIS"
 	}]
 };
