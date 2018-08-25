@@ -12,7 +12,7 @@ var config = {
 		"subdomain": "git",
 		"img": "gitlab.png",
 		"title": "GitLab",
-		"description": "Gestor de repositorios de desarrollo"
+		"description": "Gestor de repositorios Git de desarrollo"
 	},{
 		"subdomain": "pgadmin",
 		"img": "pgadmin.png",
@@ -22,27 +22,27 @@ var config = {
 		"subdomain": "portainer",
 		"img": "portainer.png",
 		"title": "Portainer",
-		"description": "Gestor de dockers"
+		"description": "Gestor de contenedores Docker"
 	},{
 		"subdomain": "webmail",
 		"img": "rainloop.png",
 		"title": "Email",
-		"description": "Correo"
+		"description": "Cliente web de correo electrónico"
 	},{
 		"subdomain": "postfixadmin",
 		"img": "postfixadmin.png",
 		"title": "Postfix Admin",
-		"description": "Gestor de cuentas de correo"
+		"description": "Gestor de cuentas de correo electrónico"
 	},{
 		"subdomain": "spam",
 		"img": "rspamd.png",
 		"title": "RSpamd",
-		"description": "Gestor de spam"
+		"description": "Gestor de spam recibido en correo electrónico"
 	},{
 		"subdomain": "minio",
 		"img": "minio.svg",
 		"title": "Minio",
-		"description": "Alamacenamieto de cache"
+		"description": "Almacén de objetos (caché y otros)"
 	},{
 		"subdomain": "artifactory",
 		"img": "artifactory.png",
@@ -52,32 +52,32 @@ var config = {
 		"subdomain": "kafkatopicsui",
 		"img": "kafka.png",
 		"title": "Kafka Topics UI",
-		"description": "Topics (temas/canales de comunicación) presentes en los brokers de Kafka"
+		"description": "Visualizador de topics (canales de comunicación) presentes en los brokers de Kafka"
 	},{
 		"subdomain": "schemaregistryui",
 		"img": "avro.png",
 		"title": "Schema Registry UI",
-		"description": "Repositorio de esquemas con soporte Avro"
+		"description": "Visualizador de schemas (con soporte Avro) para mensajes en Kafka"
 	},{
 		"subdomain": "kafkaconnectui",
 		"img": "kafka-connect.png",
 		"title": "Kafka Connect UI",
-		"description": "Conectores registrados para topics de Kafka"
+		"description": "Gestor de conectores registrados para topics de Kafka"
 	},{
 		"subdomain": "kafkamanager",
 		"img": "kafka-manager.png",
 		"title": "Kafka Manager",
-		"description": "Gestión avanzada de topics de Kafka"
+		"description": "Gestor de brokers y topics de Kafka"
 	},{
 		"subdomain": "prometheus",
 		"img": "prometheus.svg",
 		"title": "Prometheus",
-		"description": "Recolección de métricas"
+		"description": "Recopilador de métricas"
 	},{
 		"subdomain": "grafana",
 		"img": "grafana.png",
 		"title": "Grafana",
-		"description": "Representación gráfica de métricas"
+		"description": "Visualizador gráfico de métricas"
 	},{
 		"subdomain": "geoserver",
 		"img": "geoserver.png",
