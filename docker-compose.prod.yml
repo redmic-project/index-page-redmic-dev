@@ -1,0 +1,25 @@
+version: '3.5'
+
+services:
+ redmic-dev:
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels:
+        traefik.port: "${SITE_PORT}"
+        traefik.docker.network: traefik-net
+        traefik.frontend.rule: Host:${PUBLIC_HOSTNAME}
+        traefik.backend: ${SITE_NAME}
+      placement:
+        constraints:
+          - node.role == manager
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        window: 30s
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: 64M
+        reservations:
+          memory: 52M
