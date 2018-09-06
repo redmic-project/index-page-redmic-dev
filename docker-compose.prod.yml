@@ -2,8 +2,6 @@ version: '3.5'
 
 services:
  redmic-dev:
-    networks:
-      - traefik-net
     deploy:
       mode: replicated
       replicas: 1
@@ -14,11 +12,14 @@ services:
         traefik.backend: ${SITE_NAME}
       placement:
         constraints:
-          - node.role == worker
+          - node.role == manager
       restart_policy:
         condition: on-failure
-        max_attempts: 3
-
-networks:
-  traefik-net:
-    external: true
+        delay: 10s
+        window: 30s
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: 64M
+        reservations:
+          memory: 52M

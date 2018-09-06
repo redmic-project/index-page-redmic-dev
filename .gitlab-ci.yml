@@ -66,21 +66,21 @@ container-scanning:
 
 deploy-development:
   stage: deploy
-  image: redmic/docker-gitlab
+  image: registry.gitlab.com/redmic-project/docker/docker-deploy
   variables:
     DOCKER_DRIVER: overlay2
     SSH_REMOTE: ${DEV_SSH_REMOTE}
-    SERVICE: ${CI_PROJECT_NAME}
+    STACK: ${CI_PROJECT_NAME}
+    SERVICES_TO_CHECK: ${CI_PROJECT_NAME}_${CI_PROJECT_NAME}
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}
     IMAGE_TAG: ${CI_COMMIT_SHA}
     COMPOSE_FILE: docker-compose.tmpl.yml:docker-compose.dev.yml
-    PUBLIC_HOSTNAME: https://${DEV_PUBLIC_HOSTNAME}
   services:
     - docker:dind
   script:
     - >
       deploy.sh IMAGE_NAME=${IMAGE_NAME} IMAGE_TAG=${IMAGE_TAG} COMPOSE_FILE=${COMPOSE_FILE}
-      PUBLIC_HOSTNAME=${PUBLIC_HOSTNAME}
+      PUBLIC_HOSTNAME=${DEV_PUBLIC_HOSTNAME}
   environment:
     name: dev
     url: https://${DEV_PUBLIC_HOSTNAME}
@@ -92,21 +92,21 @@ deploy-development:
 
 deploy-stable:
   stage: deploy
-  image: redmic/docker-gitlab
+  image: registry.gitlab.com/redmic-project/docker/docker-deploy
   variables:
     DOCKER_DRIVER: overlay2
     SSH_REMOTE: ${DEV_SSH_REMOTE}
-    SERVICE: ${CI_PROJECT_NAME}
+    STACK: ${CI_PROJECT_NAME}
+    SERVICES_TO_CHECK: ${CI_PROJECT_NAME}_${CI_PROJECT_NAME}
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}
     IMAGE_TAG: ${CI_COMMIT_SHA}
     COMPOSE_FILE: docker-compose.tmpl.yml:docker-compose.prod.yml
-    PUBLIC_HOSTNAME: https://${DEV_PUBLIC_HOSTNAME}
   services:
     - docker:dind
   script:
     - >
       deploy.sh IMAGE_NAME=${IMAGE_NAME} IMAGE_TAG=${IMAGE_TAG} COMPOSE_FILE=${COMPOSE_FILE}
-      PUBLIC_HOSTNAME=${PUBLIC_HOSTNAME}
+      PUBLIC_HOSTNAME=${DEV_PUBLIC_HOSTNAME}
   environment:
     name: pro
     url: https://${DEV_PUBLIC_HOSTNAME}
