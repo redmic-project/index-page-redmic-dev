@@ -5,10 +5,12 @@ stages:
   - test-package
   - deploy
 
+variables:
+  DOCKER_DRIVER: overlay2
+
 docker-build-development:
   stage: package
   variables:
-    DOCKER_DRIVER: overlay2
     PARENT_IMAGE_NAME: registry.gitlab.com/redmic-project/docker/index-pages
     PARENT_IMAGE_TAG: dev-latest
   services:
@@ -27,7 +29,6 @@ docker-build-development:
 docker-build-stable:
   stage: package
   variables:
-    DOCKER_DRIVER: overlay2
     PARENT_IMAGE_NAME: registry.gitlab.com/redmic-project/docker/index-pages
     PARENT_IMAGE_TAG: latest
   services:
@@ -43,8 +44,6 @@ docker-build-stable:
 
 container-scanning:
   stage: test-package
-  variables:
-    DOCKER_DRIVER: overlay2
   allow_failure: true
   services:
     - docker:stable-dind
@@ -68,7 +67,6 @@ deploy-development:
   stage: deploy
   image: registry.gitlab.com/redmic-project/docker/docker-deploy
   variables:
-    DOCKER_DRIVER: overlay2
     SSH_REMOTE: ${DEV_SSH_REMOTE}
     STACK: ${CI_PROJECT_NAME}
     SERVICES_TO_CHECK: ${CI_PROJECT_NAME}_${CI_PROJECT_NAME}
@@ -94,7 +92,6 @@ deploy-stable:
   stage: deploy
   image: registry.gitlab.com/redmic-project/docker/docker-deploy
   variables:
-    DOCKER_DRIVER: overlay2
     SSH_REMOTE: ${DEV_SSH_REMOTE}
     STACK: ${CI_PROJECT_NAME}
     SERVICES_TO_CHECK: ${CI_PROJECT_NAME}_${CI_PROJECT_NAME}

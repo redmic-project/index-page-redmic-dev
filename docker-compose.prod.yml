@@ -2,6 +2,10 @@ version: '3.5'
 
 services:
  redmic-dev:
+    ports:
+      - target: ${SITE_PORT}
+        published: ${SITE_PORT}
+        mode: host
     deploy:
       mode: replicated
       replicas: 1
