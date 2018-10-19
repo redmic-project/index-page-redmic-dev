@@ -80,7 +80,7 @@ deploy-development:
       PUBLIC_HOSTNAME=${PUBLIC_HOSTNAME}
   environment:
     name: dev
-    url: https://${DEV_PUBLIC_HOSTNAME}
+    url: https://index.${DEV_PUBLIC_HOSTNAME}
   only:
     - branches
   except:
@@ -104,6 +104,6 @@ deploy-stable:
       PUBLIC_HOSTNAME=${PUBLIC_HOSTNAME}
   environment:
     name: pro
-    url: https://${DEV_PUBLIC_HOSTNAME}
+    url: https://index.${DEV_PUBLIC_HOSTNAME}
   only:
     - master
