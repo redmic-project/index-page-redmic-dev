@@ -2,7 +2,7 @@ var config = {
 	"domain": "redmic.net",
 	"protocol": "https",
 	"resourcesPath": "content/resources/",
-	"title": "Bienvenido a OAGdev",
+	"title": "Bienvenido a redmic.net",
 	"items": [{
 		"href": "https://redmic.net",
 		"img": "redmic.png",
@@ -94,10 +94,10 @@ var config = {
 		"title": "Unsee",
 		"description": "Dashboard de visualización de alertas generadas por Alertmanager"
 	},{
-		"subdomain": "atlas",
+		"subdomain": "atlas-admin",
 		"img": "geoserver.png",
-		"title": "GeoServer",
-		"description": "Servidor de datos GIS"
+		"title": "Atlas",
+		"description": "Gestor de GeoServer, servidor de datos GIS"
 	},{
 		"subdomain": "docs",
 		"img": "reading.png",
