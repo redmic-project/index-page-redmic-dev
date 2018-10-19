@@ -2,9 +2,9 @@ var config = {
 	"domain": "redmic.net",
 	"protocol": "https",
 	"resourcesPath": "content/resources/",
-	"title": "Bienvenido a OAGdev",
+	"title": "Bienvenido a redmic.net",
 	"items": [{
-		"subdomain": "appdev",
+		"href": "https://redmic.net",
 		"img": "redmic.png",
 		"title": "REDMIC",
 		"description": "Versión de desarrollo de REDMIC (Repositorio de Datos Marinos Integrados de Canarias)"
@@ -74,14 +74,39 @@ var config = {
 		"title": "Prometheus",
 		"description": "Recopilador de métricas"
 	},{
+		"subdomain": "pushgateway",
+		"img": "push.svg",
+		"title": "Pushgateway",
+		"description": "Punto de recogida de métricas publicadas mediante push"
+	},{
 		"subdomain": "grafana",
 		"img": "grafana.png",
 		"title": "Grafana",
 		"description": "Visualizador gráfico de métricas"
 	},{
-		"subdomain": "geoserver",
+		"subdomain": "alertmanager",
+		"img": "alertmanager.png",
+		"title": "Alertmanager",
+		"description": "Gestor de alertas generadas a partir de métricas recopiladas por Prometheus"
+	},{
+		"subdomain": "unsee",
+		"img": "fire.png",
+		"title": "Unsee",
+		"description": "Dashboard de visualización de alertas generadas por Alertmanager"
+	},{
+		"subdomain": "atlas-admin",
 		"img": "geoserver.png",
-		"title": "GeoServer",
-		"description": "Servidor de datos GIS"
+		"title": "Atlas",
+		"description": "Gestor de GeoServer, servidor de datos GIS"
+	},{
+		"subdomain": "docs",
+		"img": "reading.png",
+		"title": "Documentación",
+		"description": "Visualizador de documentación relativa a REDMIC"
+	},{
+		"subdomain": "traefik",
+		"img": "traefik.png",
+		"title": "Traefik",
+		"description": "Dashboard de Traefik, proxy inverso dinámico de contenedores y balanceador de carga"
 	}]
 };
