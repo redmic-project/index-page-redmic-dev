@@ -6,7 +6,7 @@ services:
     networks:
       - traefik-net
     healthcheck:
-      test: wget --spider -S -t 3 http://localhost:${SITE_PORT}
+      test: wget --spider http://localhost:${SITE_PORT}
       interval: 30s
       timeout: 10s
       retries: 3
@@ -15,10 +15,9 @@ services:
       mode: replicated
       replicas: 1
       labels:
-        traefik.port: "${SITE_PORT}"
-        traefik.docker.network: traefik-net
         traefik.frontend.rule: Host:${SITE_SUBDOMAIN}.${PUBLIC_HOSTNAME}
         traefik.backend: ${SITE_NAME}
+        traefik.port: "${SITE_PORT}"
       placement:
         constraints:
           - node.role == manager
@@ -34,4 +33,5 @@ services:
 
 networks:
   traefik-net:
+    name: ${TRAEFIK_NET_NAME:-traefik-net}
     external: true

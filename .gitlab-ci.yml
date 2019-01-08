@@ -10,13 +10,19 @@ services:
 
 variables:
   DOCKER_DRIVER: overlay2
+  SSH_REMOTE: ${DEV_SSH_REMOTE}
   STATUS_CHECK_DELAY: 60
+  STACK: index
+  SERVICES_TO_CHECK: index_${CI_PROJECT_NAME}
+  IMAGE_NAME: ${CI_REGISTRY_IMAGE}
+  IMAGE_TAG: ${CI_COMMIT_SHA}
+  PUBLIC_HOSTNAME: ${DEV_PUBLIC_HOSTNAME}
 
 docker-build-development:
   stage: package
   variables:
     PARENT_IMAGE_NAME: registry.gitlab.com/redmic-project/docker/index-pages
-    PARENT_IMAGE_TAG: dev-latest
+    PARENT_IMAGE_TAG: latest
   only:
     - branches
   except:
@@ -67,13 +73,7 @@ deploy-development:
   stage: deploy
   image: registry.gitlab.com/redmic-project/docker/docker-deploy
   variables:
-    SSH_REMOTE: ${DEV_SSH_REMOTE}
-    STACK: ${CI_PROJECT_NAME}
-    SERVICES_TO_CHECK: ${CI_PROJECT_NAME}_${CI_PROJECT_NAME}
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}
-    IMAGE_TAG: ${CI_COMMIT_SHA}
     COMPOSE_FILE: docker-compose.tmpl.yml:docker-compose.dev.yml
-    PUBLIC_HOSTNAME: ${DEV_PUBLIC_HOSTNAME}
   script:
     - >
       deploy.sh IMAGE_NAME=${IMAGE_NAME} IMAGE_TAG=${IMAGE_TAG} COMPOSE_FILE=${COMPOSE_FILE}
@@ -91,13 +91,7 @@ deploy-stable:
   stage: deploy
   image: registry.gitlab.com/redmic-project/docker/docker-deploy
   variables:
-    SSH_REMOTE: ${DEV_SSH_REMOTE}
-    STACK: ${CI_PROJECT_NAME}
-    SERVICES_TO_CHECK: ${CI_PROJECT_NAME}_${CI_PROJECT_NAME}
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}
-    IMAGE_TAG: ${CI_COMMIT_SHA}
     COMPOSE_FILE: docker-compose.tmpl.yml:docker-compose.prod.yml
-    PUBLIC_HOSTNAME: ${DEV_PUBLIC_HOSTNAME}
   script:
     - >
       deploy.sh IMAGE_NAME=${IMAGE_NAME} IMAGE_TAG=${IMAGE_TAG} COMPOSE_FILE=${COMPOSE_FILE}
