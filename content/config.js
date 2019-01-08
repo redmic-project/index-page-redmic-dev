@@ -1,7 +1,7 @@
 var config = {
 	"domain": "redmic.net",
 	"protocol": "https",
-	"resourcesPath": "content/resources/",
+	"resourcesPath": "resources",
 	"title": "Bienvenido a redmic.net",
 	"items": [{
 		"href": "https://redmic.net",
@@ -108,5 +108,10 @@ var config = {
 		"img": "traefik.png",
 		"title": "Traefik",
 		"description": "Dashboard de Traefik, proxy inverso dinámico de contenedores y balanceador de carga"
+	},{
+		"subdomain": "kibana",
+		"img": "kibana.png",
+		"title": "Kibana",
+		"description": "Visualizador y gestor de Elasticsearch"
 	}]
 };
