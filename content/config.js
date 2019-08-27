@@ -123,5 +123,10 @@ var config = {
 		"img": "static.png",
 		"title": "Static pages",
 		"description": "Páginas web estáticas, usadas para mostrar en caso de mantenimiento, error, etc."
+	},{
+		"subdomain": "kadmin",
+		"img": "kadmin.png",
+		"title": "Kadmin",
+		"description": "Herramienta para consumir/producir mensajes en kafka."
 	}]
 };
