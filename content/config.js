@@ -123,5 +123,15 @@ var config = {
 		"img": "static.png",
 		"title": "Static pages",
 		"description": "Páginas web estáticas, usadas para mostrar en caso de mantenimiento, error, etc."
+	},{
+		"subdomain": "kadmin",
+		"img": "kadmin.png",
+		"title": "Kadmin",
+		"description": "Herramienta para consumir/producir mensajes en Kafka"
+	},{
+		"subdomain": "vernemq",
+		"img": "vernemq.png",
+		"title": "VerneMQ",
+		"description": "Dashboard de estado del broker MQTT"
 	}]
 };
