@@ -19,6 +19,8 @@ stages:
 
 .deploy:
   variables:
+    SSH_REMOTE: ${DEV_SSH_REMOTE}
+    COMPOSE_FILE: docker-compose.yml
     STACK: index
     DD_IMAGE_NAME: ${CI_REGISTRY_IMAGE}
     DD_IMAGE_TAG: ${CI_COMMIT_SHA}
