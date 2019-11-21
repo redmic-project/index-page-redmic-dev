@@ -4,7 +4,7 @@ include:
     file: '/packaging.yml'
   - project: 'redmic-project/gitlab-ci-templates'
     ref: master
-    file: '/deployment.yml'
+    file: '/_deployment.yml'
 
 stages:
   - package
@@ -19,10 +19,33 @@ stages:
 
 .deploy:
   variables:
+    SSH_REMOTE: ${DEV_SSH_REMOTE}
     STACK: index
-    DD_IMAGE_NAME: ${CI_REGISTRY_IMAGE}
-    DD_IMAGE_TAG: ${CI_COMMIT_SHA}
     SERVICES_TO_CHECK: index_${CI_PROJECT_NAME}
     STATUS_CHECK_DELAY: 60
+    DD_IMAGE_NAME: ${CI_REGISTRY_IMAGE}
+    DD_IMAGE_TAG: ${CI_COMMIT_SHA}
+    DD_PUBLIC_HOSTNAME: ${DEV_PUBLIC_HOSTNAME}
   environment:
-    url: https://index.${PUBLIC_HOSTNAME}
+    name: dev
+    url: https://index.${DEV_PUBLIC_HOSTNAME}
+
+deploy-support-branch-development:
+  extends: .deploy
+  only:
+    - branches
+  except:
+    - master
+    - schedules
+
+deploy-stable-branch-development:
+  extends: .deploy
+  only:
+    - master
+  except:
+    - schedules
+
+deploy-version-development:
+  extends: .deploy
+  only:
+    - tags
