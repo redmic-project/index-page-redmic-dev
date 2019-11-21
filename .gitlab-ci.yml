@@ -13,6 +13,8 @@ stages:
 
 .docker-operations-build:
   variables:
+    PARENT_IMAGE_NAME: redmic/docker-index-pages
+    PARENT_IMAGE_TAG: v1.0.0
     DOCKER_BUILD_ARGS: --build-arg PARENT_IMAGE_NAME=${PARENT_IMAGE_NAME} --build-arg PARENT_IMAGE_TAG=${PARENT_IMAGE_TAG}
 
 .deploy:
