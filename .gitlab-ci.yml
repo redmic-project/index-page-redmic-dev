@@ -14,7 +14,7 @@ stages:
   - test-package
   - deploy
 
- variables:
+variables:
   PROJECT_PARENT_NAME: index
 
 .deploy:
