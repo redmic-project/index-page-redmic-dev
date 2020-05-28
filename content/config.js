@@ -9,11 +9,6 @@ var config = {
 		"title": "REDMIC",
 		"description": "Versión de desarrollo de REDMIC (Repositorio de Datos Marinos Integrados de Canarias)"
 	}, {
-		"subdomain": "git",
-		"img": "gitlab.png",
-		"title": "GitLab",
-		"description": "Gestor de repositorios Git de desarrollo"
-	}, {
 		"subdomain": "pgadmin",
 		"img": "pgadmin.png",
 		"title": "pgAdmin",
