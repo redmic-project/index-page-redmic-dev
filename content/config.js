@@ -9,11 +9,6 @@ var config = {
 		"title": "REDMIC",
 		"description": "Versión de desarrollo de REDMIC (Repositorio de Datos Marinos Integrados de Canarias)"
 	}, {
-		"subdomain": "git",
-		"img": "gitlab.png",
-		"title": "GitLab",
-		"description": "Gestor de repositorios Git de desarrollo"
-	}, {
 		"subdomain": "pgadmin",
 		"img": "pgadmin.png",
 		"title": "pgAdmin",
@@ -133,5 +128,10 @@ var config = {
 		"img": "vernemq.png",
 		"title": "VerneMQ",
 		"description": "Dashboard de estado del broker MQTT"
+	}, {
+		"subdomain": "phpldapadmin",
+		"img": "phpldapadmin.jpg",
+		"title": "phpLDAPadmin",
+		"description": "Herramienta para la administración de servidores LDAP"
 	}]
 };
