@@ -133,5 +133,10 @@ var config = {
 		"img": "vernemq.png",
 		"title": "VerneMQ",
 		"description": "Dashboard de estado del broker MQTT"
+	}, {
+		"subdomain": "phpldapadmin",
+		"img": "phpldapadmin.jpg",
+		"title": "phpLDAPadmin",
+		"description": "Herramienta para la administración de servidores LDAP"
 	}]
 };
