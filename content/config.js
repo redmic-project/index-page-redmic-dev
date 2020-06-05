@@ -84,9 +84,9 @@ var config = {
 		"title": "Alertmanager",
 		"description": "Gestor de alertas generadas a partir de métricas recopiladas por Prometheus"
 	}, {
-		"subdomain": "unsee",
+		"subdomain": "karma",
 		"img": "fire.png",
-		"title": "Unsee",
+		"title": "Karma",
 		"description": "Dashboard de visualización de alertas generadas por Alertmanager"
 	}, {
 		"subdomain": "atlas-admin",
