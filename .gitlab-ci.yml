@@ -43,6 +43,7 @@ variables:
   variables:
     SSH_REMOTE: ${DEV_SSH_REMOTE}
     SSH_PORT: ${DEV_SSH_PORT}
+    DEPLOY_KEY: ${DEV_DEPLOY_KEY}
     PUBLIC_HOSTNAME: ${DEV_PUBLIC_HOSTNAME}
     DD_PUBLIC_HOSTNAME: ${DEV_PUBLIC_HOSTNAME}
     <<: *deploy-compose-file-variables
