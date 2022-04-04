@@ -19,25 +19,15 @@ var config = {
 		"title": "Portainer",
 		"description": "Gestor de contenedores Docker"
 	}, {
-		"subdomain": "webmail",
-		"img": "rainloop.png",
-		"title": "Email",
-		"description": "Cliente web de correo electrónico"
-	}, {
-		"subdomain": "postfixadmin",
-		"img": "postfixadmin.png",
-		"title": "Postfix Admin",
-		"description": "Gestor de cuentas de correo electrónico"
-	}, {
-		"subdomain": "spam",
-		"img": "rspamd.png",
-		"title": "RSpamd",
-		"description": "Gestor de spam recibido en correo electrónico"
-	}, {
 		"subdomain": "minio",
 		"img": "minio.svg",
 		"title": "Minio",
-		"description": "Almacén de objetos (caché y otros)"
+		"description": "Almacén de objetos compatible con S3 (caché y otros)"
+	}, {
+		"subdomain": "selenium",
+		"img": "seleniumgrid.svg",
+		"title": "Selenium Grid",
+		"description": "Gestor de nodos coordinados, para automatización y testeo paralelo en diferentes navegadores"
 	}, {
 		"subdomain": "artifactory",
 		"img": "artifactory.png",
@@ -61,8 +51,13 @@ var config = {
 	}, {
 		"subdomain": "kafkamanager",
 		"img": "kafka-manager.png",
-		"title": "Kafka Manager",
-		"description": "Gestor de brokers y topics de Kafka"
+		"title": "CMAK",
+		"description": "Gestor de brokers, topics y consumers de Kafka"
+	}, {
+		"subdomain": "kowl",
+		"img": "kowl.jpg",
+		"title": "Kowl",
+		"description": "Gestor detallado del entorno Kafka"
 	}, {
 		"subdomain": "prometheus",
 		"img": "prometheus.svg",
@@ -89,7 +84,7 @@ var config = {
 		"title": "Karma",
 		"description": "Dashboard de visualización de alertas generadas por Alertmanager"
 	}, {
-		"subdomain": "atlas-admin",
+		"subdomain": "atlas",
 		"img": "geoserver.png",
 		"title": "Atlas",
 		"description": "Gestor de GeoServer, servidor de datos GIS"
